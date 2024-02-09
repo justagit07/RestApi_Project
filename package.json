@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "index.js"
+    "dev": "nodemon  -r dotenv/config --experimental-json-modules index.js"
   },
   "keywords": [
     "Javascript",
@@ -19,6 +19,7 @@
   "author": "Neeraj Rawat",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "mongoose": "^8.1.1",
