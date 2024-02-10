@@ -3,15 +3,16 @@ class ApiError extends Error
     (
         statuscode,
         message,
+        description,
         errors=[]
     )
     {
-        super(message),
-        this.message= message,
+        super(message, statuscode, description),
+        this.message=message,
         this.statuscode=statuscode,
         this.errors=errors,
         this.success=false,
-        this.data= null
+        this.data= description   
     }
 }
 

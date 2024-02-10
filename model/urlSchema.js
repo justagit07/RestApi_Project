@@ -6,7 +6,8 @@ const url_schema=  new mongoose.Schema(
        shortid:
        {
         type :String,
-        required:true
+        required:true,
+        unique:true
        },
 
        originalurl:
@@ -14,11 +15,11 @@ const url_schema=  new mongoose.Schema(
         type :String,
         required:true
        },
-       visithistory:[{timestamp:{type:number}}]
+       visithistory: [{ timestamp: { type: Number } }]
     },
     {
         timestamps:true
     }
 )
 
-export const  url = mongoose.model("Url", url_schema)
+export const  Url = mongoose.model("Url", url_schema)

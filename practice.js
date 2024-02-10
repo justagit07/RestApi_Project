@@ -1,3 +1,7 @@
-let x= "this is hte string"
+import { nanoid } from "nanoid";
 
-console.log('this is me ', x);
+
+
+const id = nanoid(); // Generate a unique ID
+
+console.log('Generated ID:', id);
