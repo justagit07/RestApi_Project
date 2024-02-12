@@ -9,14 +9,8 @@ const app= express();
 connectdb()
 
 
-app.set("view engine", ejs)
-
-app.set("view", './view')
-
-console.log(Path.resolve( './index.js'))
-
-
-
+app.set("view engine", 'ejs')
+app.set("views", Path.resolve("./views"))
 app.listen(process.env.PORT, ()=>
 {
     console.log(`your server is live on the: http://localhost:${process.env.PORT}`)
@@ -32,5 +26,6 @@ app.use(express.urlencoded())
 import  urlroutes from "./routes/url.route.js"
 
 app.use("/", urlroutes)
+
 
 

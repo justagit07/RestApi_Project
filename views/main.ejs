@@ -4,8 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        td{
+
+            padding: 6px;
+            text-align: left;
+
+        
+        }
+    </style>
 </head>
 <body>
-    <h1>this is my frontend </h1>
+
+
+
+
+    <h1>this is my frontend  i am </h1>
+
+
+    <table>
+        <tr>
+            <th>Name  of  site </th>
+            <th>visited count</th>
+
+        </tr>
+
+        
+            <% urls.forEach((e)=>{ %>
+                <tr>
+
+                    <td><%= e.originalurl %></td>
+                    <td><%= e.visithistory.length %></td>
+                    <td><%= e.shortid %></td>
+                </tr>
+                    
+                    <% }) %>
+                    
+
+    </table>
+    <%  urls.forEach((e)=> { %>
+        
+            <li><%= e.originalurl %></li>
+        <% }) %>
 </body>
 </html>

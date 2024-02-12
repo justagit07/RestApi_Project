@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <h1> The Dyanamic Url Shortner site</h1>
+
+     <% if(locals.shortid)  { %>
+    <h3>your short id is : <%= shortid %></h3>
+    <h2> you can go to this id:  <a href="http://localhost:3000/<%= shortid %>" >click</a></h2>
+    <h2> Get the Analysis of the url        <a href="http://localhost:3000/test/ssr"> Data</a></h2>
+<% } %>
+    <form action="/url"
+     method="POST">
+    
+    <label >Enter your Original Url</label>
+    <input type="text", name="url" placeholder="www.example.com"/>
+     <button type="submit">Genrate</button>
+    </form>
+    
+</body>
+</html>

@@ -11,15 +11,24 @@ const urllogic = AsyncHandler(async function (req,res,err)
     {
         throw new ApiError( 400 , "Bad request", 'your are posting empty field')
     }
-    const Miniid = nanoid(4)
-    const x =await Url.create({
-       shortid:Miniid,
-       originalurl:body.url,
-       visithistory:[]
-    })
-    console.log(x);   
-    res.status(201).json({message:"Your short id is sucessfully genrated:", database:x})
-} );
+    const alreadyexist= await Url.findOne({originalurl:body.url})
+    if (alreadyexist)
+    {
+        res.render('home', {shortid: alreadyexist.shortid})
+    }
+    else
+    {
+
+        const Miniid = nanoid(4)
+        const x =await Url.create({
+            shortid:Miniid,
+            originalurl:body.url,
+            visithistory:[]
+        })
+        console.log(x);   
+        res.render('home', {shortid: x.shortid})
+    }
+    } );
 
 
 export {urllogic}
